@@ -18,11 +18,12 @@
                 icon: 'https://via.placeholder.com/150',
 
             });
+            nonification.close()
         }
 
         function notifSet () {
             if (!("Notification" in window)) {
-                alert('Браузер не поддерживает уведомления');
+                console.log("This browser does not support desktop notification");
             }else if (Notification.permission === 'granted') {
                 setTimeout(newMessage, 5000);
             }else if (Notification.permission !== 'denited') {
