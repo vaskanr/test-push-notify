@@ -5,9 +5,13 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="button" onclick="notifSet()" value="NOtify">
+    <input type="button" onclick="notifSet()" value="Notify">
+    <input type="button" onclick="notifDel()" value="Notify">
     <script>
-        function notifyMe() {
+        function notifDel() {
+            Notification.permission = 'default'
+        }
+        function newMessage() {
             let nonification = new Notification ('Заголовок', {
                 tag: 'ache-mail',
                 body: 'Текст уведомления',
@@ -20,14 +24,14 @@
             if (!("Notification" in window)) {
                 alert('Браузер не поддерживает уведомления');
             }else if (Notification.permission === 'granted') {
-                setTimeout(notifyMe, 5000);
+                setTimeout(newMessage, 5000);
             }else if (Notification.permission !== 'denited') {
                 Notification.requestPermission(function (permission) {
                     if (!('permission' in Notification)) {
                         Notification.permission === 'permission'
                     }
                     if (Notification.permission === 'permission') {
-                        setTimeout(notifyMe, 5000);
+                        setTimeout(newMessage, 5000);
                     }
                 });
             }
