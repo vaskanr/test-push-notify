@@ -6,7 +6,7 @@
 </head>
 <body>
     <input type="button" onclick="notifSet()" value="Notify">
-    <input type="button" onclick="notifDel()" value="Del Notify">
+    <input type="button" onclick="notifDel()" value="Notify">
     <script>
         function notifDel() {
             Notification.permission = 'default'
@@ -35,10 +35,10 @@
                     }
                 });
             }
-            console.log('Notification:', ("Notification" in window))
-            console.log('Notification 2:', Notification)
-            console.log('Notification permission:', Notification.permission)
         };
+        console.log('Notification:', ("Notification" in window))
+        console.log('Notification 2:', Notification)
+        console.log('Notification permission:', Notification.permission)
 
     </script>
 </body>
